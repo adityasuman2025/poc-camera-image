@@ -9,8 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "opencv-react": "0.0.6",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-draggable": "^4.4.5",
+    "react-perspective-cropper": "^0.2.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
