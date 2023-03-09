@@ -1,7 +1,6 @@
 import React, { useState, useRef, useCallback } from 'react'
 import './App.css';
-import Camera from './Camera';
-import Cropper from './Cropper';
+import PerspCropper from './PerspCropper';
 
 const App = () => {
     const [cropState, setCropState] = useState<any>()
@@ -31,7 +30,7 @@ const App = () => {
 
     return (
         <>
-            <Cropper
+            <PerspCropper
                 ref={cropperRef}
                 image={img}
                 onChange={onChange}
@@ -48,6 +47,8 @@ const App = () => {
     )
 }
 
+
+// import Camera from './Camera';
 
 // function App() {
 //     return (
