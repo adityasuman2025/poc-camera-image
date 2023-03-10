@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './App.css';
 import ImageCrop from './ImageCrop';
+import ReorderList from './ReorderList';
 import paper from "./paper.jpg";
 
 function rotateImage(imageBase64: string, rotation: number, cb: (newImg: string) => void) {
@@ -38,6 +39,43 @@ export default function App() {
     return (
         <div>
             drag & drop
+            <ReorderList
+                items={[
+                    {
+                        id: "Box-1",
+                        color: "red",
+                        order: 1
+                    },
+                    {
+                        id: "Box-2",
+                        color: "green",
+                        order: 2
+                    },
+                    {
+                        id: "Box-3",
+                        color: "blue",
+                        order: 3
+                    }
+                ]}
+                itemRenderer={(item: { [key: string]: any }, handleDrag, handleDrop) => (
+                    <div
+                        key={item.id}
+                        id={item.id}
+
+                        draggable={true}
+                        onDragOver={e => e.preventDefault()}
+                        onDragStart={handleDrag}
+                        onDrop={handleDrop}
+
+                        style={{
+                            border: "1px solid grey",
+                            width: "100px", height: "100px"
+                        }}
+                    >
+                        {item.id}
+                    </div>
+                )}
+            />
 
             {/* <ImageCrop
                 imgSrc={image}
