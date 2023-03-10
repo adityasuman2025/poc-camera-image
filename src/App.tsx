@@ -38,24 +38,11 @@ export default function App() {
 
     return (
         <div>
-            drag & drop
             <ReorderList
                 items={[
-                    {
-                        id: "Box-1",
-                        color: "red",
-                        order: 1
-                    },
-                    {
-                        id: "Box-2",
-                        color: "green",
-                        order: 2
-                    },
-                    {
-                        id: "Box-3",
-                        color: "blue",
-                        order: 3
-                    }
+                    { id: "Box-1" },
+                    { id: "Box-2" },
+                    { id: "Box-3" },
                 ]}
                 itemRenderer={(item: { [key: string]: any }, handleDrag, handleDrop) => (
                     <div

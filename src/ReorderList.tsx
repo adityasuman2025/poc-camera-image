@@ -8,8 +8,8 @@ export default function ReorderList({
     itemRenderer: (...args: any) => ReactElement
 }) {
     const [dragId, setDragId] = useState();
-    const [boxes, setBoxes] = useState(items);
-
+    const [boxes, setBoxes] = useState<{[key: string]: any}[]>(items.map((item, idx) => ({ ...item, order: idx+1 })));
+    console.log("boxes", boxes)
     function handleDrag(ev: any) {
         setDragId(ev.currentTarget.id);
     }
@@ -30,12 +30,12 @@ export default function ReorderList({
     }
 
     return (
-        <div className="App">
+        <>
             {
-                items
+                boxes
                     .sort((a, b) => a.order - b.order)
                     .map((item) => itemRenderer(item, handleDrag, handleDrop))
             }
-        </div>
+        </>
     )
 }
