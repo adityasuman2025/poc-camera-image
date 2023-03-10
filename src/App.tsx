@@ -37,14 +37,16 @@ export default function App() {
 
     return (
         <div>
-            <ImageCrop
+            drag & drop
+
+            {/* <ImageCrop
                 imgSrc={image}
                 onSaveClick={(newImgSrc) => {
                     console.log("cropped image", newImgSrc)
                 }}
             />
 
-            <button onClick={handleRotateClick}>rotate</button>
+            <button onClick={handleRotateClick}>rotate</button> */}
         </div>
     )
 }
