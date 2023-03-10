@@ -9,7 +9,7 @@ export default function ReorderList({
 }) {
     const [dragId, setDragId] = useState();
     const [boxes, setBoxes] = useState<{[key: string]: any}[]>(items.map((item, idx) => ({ ...item, order: idx+1 })));
-    console.log("boxes", boxes)
+
     function handleDrag(ev: any) {
         setDragId(ev.currentTarget.id);
     }
