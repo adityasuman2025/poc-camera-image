@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useRef, DependencyList } from 'react'
-import './App.css';
-
 import ReactCrop, { Crop, PixelCrop } from 'react-image-crop'
 import 'react-image-crop/dist/ReactCrop.css'
 
@@ -78,12 +76,12 @@ export default function ImageCrop({
     imgSrc: string,
     onSaveClick: (newImgSrc: string) => void,
 }) {
-    const previewCanvasRef = useRef<HTMLCanvasElement>(null)
-    const imgRef = useRef<HTMLImageElement>(null)
-    const blobUrlRef = useRef('')
+    const previewCanvasRef = useRef<HTMLCanvasElement>(null);
+    const imgRef = useRef<HTMLImageElement>(null);
+    const blobUrlRef = useRef<string>('');
 
     const [crop, setCrop] = useState<Crop>()
-    const [completedCrop, setCompletedCrop] = useState<PixelCrop>()
+    const [completedCrop, setCompletedCrop] = useState<PixelCrop>();
 
     function handleSaveClick() {
         if (!previewCanvasRef.current) return;
